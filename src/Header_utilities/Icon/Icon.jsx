@@ -1,6 +1,7 @@
 import React from 'react'
 
 function Icon(props) {
+    
     if (props.open) {
         return (
             <div className='w-48 h-64 z-50'
