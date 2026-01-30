@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Sidebar() {
   return (
     <div className='flex flex-col justify-between w-73'>
 
-      <div className=''>
+      <div>
 
         <div className='mt-4 px-6 h-12 flex justify-start items-center'>
           <div className='flex flex-col gap-1.5'>
@@ -39,10 +40,28 @@ function Sidebar() {
           <div className='text-sm ml-4'>Tasks</div>
         </div>
 
-        <hr className='bg-[#E1DFDD]' />
+        <div className='bg-[#E1DFDD]  h-px my-2.5 mx-4' >
+        </div>
+
+        <div className='flex h-11 '>
+          <div className='pt-3 pr-0 pb-3 pl-6 flex justify-center items-center'>
+            <svg class="fluentIcon ___12fm75w f1w7gpdv fez10in fg4l7m0" aria-label="" fill="currentColor" aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2.5a.5.5 0 00-1 0V9H2.5a.5.5 0 000 1H9v6.5a.5.5 0 001 0V10h6.5a.5.5 0 000-1H10V2.5z" fill="currentColor"></path></svg>
+            <input type="text" name="" size="" placeholder='New list' className='pl-4 outline-none w-45' />
+          </div>
+          <div className='flex justify-center items-center '>
+            <button className='py-0 px-6'>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.5 3C15.8807 3 17 4.11929 17 5.5V9.59971C16.6832 9.43777 16.3486 9.30564 16 9.20703V5.5C16 4.67157 15.3284 4 14.5 4H5.5C4.67157 4 4 4.67157 4 5.5V14.5C4 15.3284 4.67157 16 5.5 16H9.20703C9.30564 16.3486 9.43777 16.6832 9.59971 17H5.5C4.11929 17 3 15.8807 3 14.5V5.5C3 4.11929 4.11929 3 5.5 3H14.5Z" fill="#212121"></path><path d="M6.5 6C6.74546 6 6.94961 6.17688 6.99194 6.41012L7 6.5V13.5C7 13.7761 6.77614 14 6.5 14C6.25454 14 6.05039 13.8231 6.00806 13.5899L6 13.5V6.5C6 6.22386 6.22386 6 6.5 6Z" fill="#212121"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M19 14.5C19 16.9853 16.9853 19 14.5 19C12.0147 19 10 16.9853 10 14.5C10 12.0147 12.0147 10 14.5 10C16.9853 10 19 12.0147 19 14.5ZM15 12.5C15 12.2239 14.7761 12 14.5 12C14.2239 12 14 12.2239 14 12.5V14H12.5C12.2239 14 12 14.2239 12 14.5C12 14.7761 12.2239 15 12.5 15H14V16.5C14 16.7761 14.2239 17 14.5 17C14.7761 17 15 16.7761 15 16.5V15H16.5C16.7761 15 17 14.7761 17 14.5C17 14.2239 16.7761 14 16.5 14H15V12.5Z" fill="#212121"></path></svg>
+            </button>
+           
+          </div>
+        </div>
 
       </div>
-      <div></div>
+
+      <div className='flex justify-center items-center'>
+        <Link className=''>
+        </Link>
+      </div>
     </div>
   )
 }
