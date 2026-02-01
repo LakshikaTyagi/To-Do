@@ -4,7 +4,7 @@ function Icon(props) {
     
     if (props.open) {
         return (
-            <div className='w-48 h-64 z-50'
+            <div className='w-48 z-50 fixed'
             >
                 <div className='bg-gray-100 rounded-3xl shadow-xl/40 p-8'>
                     <div>

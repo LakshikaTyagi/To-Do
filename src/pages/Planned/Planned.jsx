@@ -2,7 +2,7 @@ import React from 'react'
 
 function Planned() {
   return (
-    <div>
+    <div className='fixed top-12 left-73'>
       planned
     </div>
   )

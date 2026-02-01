@@ -2,7 +2,7 @@ import React from 'react'
 
 function Tasks() {
   return (
-    <div className=''>
+    <div className='fixed top-12 left-73'>
       tasks
     </div>
   )
