@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Important() {
+function Important(props) {
 
   return (
-    <div className='fixed top-12 left-73 flex flex-col no-wrap'
+    <div className={`${!props.open && "hidden"} h-screen bg-amber-400 border-b-emerald-800 border`}
     >
       <div className='flex justify-between items-center'>
         <div className='flex'>

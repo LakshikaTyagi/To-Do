@@ -1,10 +1,12 @@
 import React from 'react'
 
-function Assigned() {
+function Assigned(props) {
   return (
-    <div className='fixed top-12 left-73'>
+    <div className={`${!props.open && "hidden"} h-screen bg-amber-400 border-b-emerald-800 border`} >
       Assigned
+      
     </div>
+
   )
 }
 

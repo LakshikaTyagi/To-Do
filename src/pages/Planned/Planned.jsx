@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Planned() {
+function Planned(props) {
   return (
-    <div className='fixed top-12 left-73'>
+    <div className={`${!props.open && "hidden"} h-screen bg-amber-400 border-b-emerald-800 border`}>
       planned
     </div>
   )
