@@ -45,12 +45,12 @@ function MyDay(props) {
 
       <div className='mt-0 mb-0 grow flex flex-col gap-4 px-5'>
 
-        <div className='flex flex-col justify-center shadow-md '>
-          <div className='px-4 flex bg-[#FFFFFF] items-center rounded-t-lg border border-amber-200 border-b-[#faf9f8ea]'>
+        <div className='flex flex-col justify-center shadow-md rounded-lg'>
+          <div className='px-4 flex bg-[#FFFFFF] items-center rounded-t-lg'>
             <svg className='ml-2.5 my-auto' class="fluentIcon ___12fm75w f1w7gpdv fez10in fg4l7m0" aria-label="" fill="currentColor" aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 3a7 7 0 100 14 7 7 0 000-14zm-8 7a8 8 0 1116 0 8 8 0 01-16 0z" fill="currentColor"></path></svg>
             <input type="text" placeholder='Add a task' name="" id="" className='outline-none w-full py-4 px-3.5' />
           </div>
-          <div className='rounded-b-lg px-4 bg-[#FAF9F8] flex py-2 border-t-[#FAF9F8]  border border-amber-400'>
+          <div className='rounded-b-lg px-4 bg-[#FAF9F8] flex py-2 border border-transparent border-t-[#d2cec9]'>
             <button className='p-1 mx-1.5'>
               <svg class="fluentIcon dateButton-icon ___12fm75w f1w7gpdv fez10in fg4l7m0" aria-label="" fill="currentColor" aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M7 11a1 1 0 100-2 1 1 0 000 2zm1 2a1 1 0 11-2 0 1 1 0 012 0zm2-2a1 1 0 100-2 1 1 0 000 2zm1 2a1 1 0 11-2 0 1 1 0 012 0zm2-2a1 1 0 100-2 1 1 0 000 2zm4-5.5A2.5 2.5 0 0014.5 3h-9A2.5 2.5 0 003 5.5v9A2.5 2.5 0 005.5 17h9a2.5 2.5 0 002.5-2.5v-9zM4 7h12v7.5c0 .83-.67 1.5-1.5 1.5h-9A1.5 1.5 0 014 14.5V7zm1.5-3h9c.83 0 1.5.67 1.5 1.5V6H4v-.5C4 4.67 4.67 4 5.5 4z" fill="currentColor"></path></svg>
             </button>
@@ -64,14 +64,14 @@ function MyDay(props) {
           </div>
         </div>
 
-        <div className='flex flex-col justify-center'>
-          <div className='flex bg-[#FFFFFF]'>
+        <div className='flex flex-col justify-center shadow-md rounded-lg'>
+          <div className='flex bg-[#FFFFFF] rounded-t-lg'>
             <div className='py-2.5 px-4'> </div>
             <div className='py-2.5 px-4 w-150'>Title</div>
             <div className='py-2.5 px-4 w-28'>Due Date</div>
             <div className='py-2.5 px-4'>Importance</div>
           </div>
-          <div className='flex items-center bg-[#FAF9F8]'>
+          <div className='flex items-center bg-[#FAF9F8] rounded-b-lg border border-transparent border-t-[#d2cec9]'>
             <div className='px-1.5' >
               <svg class="fluentIcon checkBox-hover ___12fm75w f1w7gpdv fez10in fg4l7m0" aria-label="" fill="currentColor" aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a8 8 0 110 16 8 8 0 010-16zm0 1a7 7 0 100 14 7 7 0 000-14zm3.36 4.65c.17.17.2.44.06.63l-.06.07-4 4a.5.5 0 01-.64.07l-.07-.06-2-2a.5.5 0 01.63-.77l.07.06L9 11.3l3.65-3.65c.2-.2.51-.2.7 0z" fill="currentColor"></path></svg>
             </div>
