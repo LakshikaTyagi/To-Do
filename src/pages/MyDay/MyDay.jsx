@@ -37,21 +37,6 @@ function MyDay(props) {
     })
   }
 
-  // const handleCompleteTask = () => {
-  //   setAllTasks([
-  //     ...allTasks,
-  //     task
-  //   ])
-
-  //   setTask({
-  //     title : "",
-  //     date: "",
-  //     isImportant: false,
-  //     isCompleted : false,
-  //     id : "",
-  //   })
-  // }
-
   const handleMarkImportant = (index) => {
     setAllTasks((tasks) => {
       return tasks.map((task, i) => {
@@ -157,10 +142,9 @@ function MyDay(props) {
             return (
               <div key={index} className='flex items-center bg-[#FAF9F8] rounded-b-lg border border-transparent border-t-[#d2cec9]'>
                 <div className='px-1.5' >
-                  <button onClick={() => {
+                  <button onClick={() => 
                     handleMarkComplete(index)
-                    // handleCompleteTask
-                  }} color = {task?.isCompleted? "blue" : "black"}>
+                  } color = {task?.isCompleted? "blue" : "black"}>
                     <Circle  />
                   </button>
                   
