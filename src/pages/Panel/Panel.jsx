@@ -134,6 +134,28 @@ function Panel() {
                             <div className='px-1.5'>
                                 <Circle onClick={() => handleMarkComplete(index)} color={task?.isCompleted ? "blue" : "black"} background-color={task?.isCompleted ? "blue" : "black"} />
                             </div>
+                            <div className='py-2.5 px-4 w-150 line-through decoration-1'>{task?.title}</div>
+                            <div className='py-2.5 px-4 w-32'>{task?.date}</div>
+                            <div className='my-3 mx-9.5'>
+                                <Star onClick={() => handleMarkImportant(index)} size={16} color={task?.isImportant ? "yellow" : "black"} />
+                            </div>
+                        </div>
+
+                    )
+                })}
+            </div>
+
+            <div className='flex flex-col justify-center shadow-md rounded-lg'>
+                <div className='flex bg-[#FFFFFF] rounded-t-lg py-2.5 px-4'>Important</div>
+                {allTasks.map((task, index) => {
+                    if (!task?.isImportant || task?.isCompleted) {
+                        return;
+                    }
+                    return (
+                        <div key={index} className='flex bg-[#FAF9F8] rounded-b-lg border border-transparent border-t-[#d2cec9]'>
+                            <div className='px-1.5'>
+                                <Circle onClick={() => handleMarkComplete(index)} color={task?.isCompleted ? "blue" : "black"} background-color={task?.isCompleted ? "blue" : "black"} />
+                            </div>
                             <div className='py-2.5 px-4 w-150'>{task?.title}</div>
                             <div className='py-2.5 px-4 w-32'>{task?.date}</div>
                             <div className='my-3 mx-9.5'>
@@ -144,6 +166,8 @@ function Panel() {
                     )
                 })}
             </div>
+
+            
 
         </div>
     )
