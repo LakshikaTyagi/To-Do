@@ -31,7 +31,7 @@ function Important(props) {
         </div>
       </div>
 
-      <Panel/>
+      <Panel />
       
     </div>
   )

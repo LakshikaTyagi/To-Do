@@ -50,7 +50,7 @@ function MyDay(props) {
         </div>
       </div>
 
-      <Panel/>
+      <Panel />
 
     </div>
   )

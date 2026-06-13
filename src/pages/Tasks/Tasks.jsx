@@ -36,7 +36,7 @@ function Tasks(props) {
         </div>
       </div>
 
-      <Panel/>
+      <Panel />
 
     </div>
   )

@@ -30,7 +30,7 @@ function Planned(props) {
         </div>
       </div>
 
-      <Panel/>
+      <Panel task={props.task} setTask = {props.setTask} allTasks = {props.allTasks} setAllTasks={props.setAllTasks}/>
 
     </div>
   )

@@ -5,6 +5,7 @@ import MyDay from '../../pages/MyDay/MyDay';
 import Important from '../../pages/Important/Important';
 import Planned from '../../pages/Planned/Planned';
 import Tasks from '../../pages/Tasks/Tasks';
+import Panel from '../../pages/Panel/Panel'
 
 function Sidebar() {
 
