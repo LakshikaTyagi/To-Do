@@ -1,72 +1,23 @@
 import { ChevronDown } from "lucide-react";
-import React, { useState } from "react";
+import React,{ useContext }  from "react";
 import { Star } from 'lucide-react';
 import { Circle } from 'lucide-react';
+import TaskProvider from "../TaskProvider/TaskProvider";
+import { TaskContext } from "../TaskContext/TaskContext";
+
 
 function Panel() {
-      const [task, setTask] = useState({
-            id: "",
-            title: "",
-            date: "",
-            isImportant: false,
-            isCompleted: false,
-        });
+    const {
+        task,
+        setTask,
+        allTasks,
+        setAllTasks,
+        handleAddTask,
+        handleTaskInput,
+        handleMarkComplete,
+        handleMarkImportant
+    } = useContext(TaskContext);
     
-        const [allTasks, setAllTasks] = useState([]);
-
-    const handleTaskInput = (e) => {
-        setTask({
-            ...task,
-            title: e.target.value
-        })
-    }
-
-    const handleAddTask = () => {
-        setAllTasks([
-            ...allTasks,
-            task
-        ])
-
-        setTask({
-            title: "",
-            id: "",
-            date: "",
-            isImportant: false,
-            isCompleted: false
-        })
-
-        console.log(allTasks)
-        console.log(task)
-    }
-
-    const handleMarkImportant = (index) => {
-        setAllTasks((tasks) => {
-            return tasks.map((task, i) => {
-                if (i === index) {
-                    return {
-                        ...task,
-                        isImportant: !task?.isImportant
-                    }
-                }
-                else return task
-            })
-        })
-    }
-
-    const handleMarkComplete = (index) => {
-        setAllTasks((tasks) => {
-            return tasks.map((task, i) => {
-                if (i === index) {
-                    return {
-                        ...task,
-                        isCompleted: !task?.isCompleted
-                    }
-                }
-                else return task
-            })
-        })
-    }
-
     return (
         <div className='mt-0 mb-0 grow flex flex-col gap-4 px-5'>
 
@@ -165,7 +116,7 @@ function Panel() {
                 })}
             </div>
 
-            
+
 
         </div>
     )

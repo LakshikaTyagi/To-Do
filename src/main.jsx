@@ -9,21 +9,24 @@ import Important from './pages/Important/Important.jsx'
 import Planned from './pages/Planned/Planned.jsx'
 import Assigned from './pages/Assigned/Assigned.jsx'
 import Tasks from './pages/Tasks/Tasks.jsx'
+import TaskProvider from './pages/TaskProvider/TaskProvider.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path = '/' element = {<Layout/>}>
       <Route path = '/MyDay' element = {<MyDay/>}/>
-      <Route path='Important' element = {<Important/>}/>
-      <Route path = 'Planned' element = {<Planned/>} />
+      <Route path='important' element = {<Important/>}/>
+      <Route path = 'planned' element = {<Planned/>} />
       <Route path='/assigned' element = {<Assigned/>} />
-      <Route path='/Tasks' element = {<Tasks/>}/>
+      <Route path='/tasks' element = {<Tasks/>}/>
     </Route>
   )
 )
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router = {router} />
+    <TaskProvider>
+      <RouterProvider router = {router} />
+    </TaskProvider>
   </StrictMode>,
 )
