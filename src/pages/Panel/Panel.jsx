@@ -1,5 +1,5 @@
 import { ChevronDown } from "lucide-react";
-import React,{ useContext }  from "react";
+import React, { useContext } from "react";
 import { Star } from 'lucide-react';
 import { Circle } from 'lucide-react';
 import TaskProvider from "../TaskProvider/TaskProvider";
@@ -17,7 +17,7 @@ function Panel() {
         handleMarkComplete,
         handleMarkImportant
     } = useContext(TaskContext);
-    
+
     return (
         <div className='mt-0 mb-0 grow flex flex-col gap-4 px-5'>
 
@@ -42,30 +42,33 @@ function Panel() {
             </div>
 
             <div className='flex flex-col justify-center shadow-md rounded-lg'>
-                <div className='flex bg-[#FFFFFF] rounded-t-lg'>
-                    <div className='py-2.5 px-4'> </div>
-                    <div className='py-2.5 px-4 w-150'>Title</div>
-                    <div className='py-2.5 px-4 w-28'>Due Date</div>
-                    <div className='py-2.5 px-4'>Importance</div>
-                </div>
+
                 {allTasks.map((task, index) => {
                     if (task?.isCompleted) {
                         return;
                     }
                     return (
-                        <div key={index} className='flex items-center bg-[#FAF9F8] rounded-b-lg border border-transparent border-t-[#d2cec9]'>
-                            <div className='px-1.5' >
-                                <button onClick={() =>
-                                    handleMarkComplete(index)
-                                } color={task?.isCompleted ? "blue" : "black"}>
-                                    <Circle />
-                                </button>
-
+                        <div>
+                            <div className='flex bg-[#FFFFFF] rounded-t-lg'>
+                                <div className='py-2.5 px-4'> </div>
+                                <div className='py-2.5 px-4 w-150'>Title</div>
+                                <div className='py-2.5 px-4 w-28'>Due Date</div>
+                                <div className='py-2.5 px-4'>Importance</div>
                             </div>
-                            <div className='py-2.5 px-4 w-150'> {task?.title} </div>
-                            <div className='py-2.5 px-4 w-32'>{task?.date} </div>
-                            <div className='my-3 mx-9.5'>
-                                <Star onClick={() => handleMarkImportant(index)} size={16} color={task?.isImportant ? "yellow" : "black"} />
+                            <div key={index} className='flex items-center bg-[#FAF9F8] rounded-b-lg border border-transparent border-t-[#d2cec9]'>
+                                <div className='px-1.5' >
+                                    <button onClick={() =>
+                                        handleMarkComplete(index)
+                                    } color={task?.isCompleted ? "blue" : "black"}>
+                                        <Circle />
+                                    </button>
+
+                                </div>
+                                <div className='py-2.5 px-4 w-150'> {task?.title} </div>
+                                <div className='py-2.5 px-4 w-32'>{task?.date} </div>
+                                <div className='my-3 mx-9.5 '>
+                                    <Star onClick={() => handleMarkImportant(index)} size={16} color={task?.isImportant ? "blue" : "black"} />
+                                </div>
                             </div>
                         </div>
                     )
@@ -73,20 +76,23 @@ function Panel() {
             </div>
 
             <div className='flex flex-col justify-center shadow-md rounded-lg'>
-                <div className='flex bg-[#FFFFFF] rounded-t-lg py-2.5 px-4'>Completed</div>
                 {allTasks.map((task, index) => {
                     if (!task?.isCompleted) {
                         return;
                     }
                     return (
-                        <div key={index} className='flex bg-[#FAF9F8] rounded-b-lg border border-transparent border-t-[#d2cec9]'>
-                            <div className='px-1.5'>
-                                <Circle onClick={() => handleMarkComplete(index)} color={task?.isCompleted ? "blue" : "black"} background-color={task?.isCompleted ? "blue" : "black"} />
-                            </div>
-                            <div className='py-2.5 px-4 w-150 line-through decoration-1'>{task?.title}</div>
-                            <div className='py-2.5 px-4 w-32'>{task?.date}</div>
-                            <div className='my-3 mx-9.5'>
-                                <Star onClick={() => handleMarkImportant(index)} size={16} color={task?.isImportant ? "yellow" : "black"} />
+                        <div>
+                            <div className='flex bg-[#FFFFFF] rounded-t-lg py-2.5 px-4'>Completed</div>
+
+                            <div key={index} className='flex bg-[#FAF9F8] rounded-b-lg border border-transparent border-t-[#d2cec9]'>
+                                <div className='px-1.5 py-2.5'>
+                                    <Circle onClick={() => handleMarkComplete(index)} color={task?.isCompleted ? "blue" : "black"} background-color={task?.isCompleted ? "blue" : "black"} />
+                                </div>
+                                <div className='py-2.5 px-4 w-150 line-through decoration-1'>{task?.title}</div>
+                                <div className='py-2.5 px-4 w-32'>{task?.date}</div>
+                                <div className='my-3 mx-9.5'>
+                                    <Star onClick={() => handleMarkImportant(index)} size={16} color={task?.isImportant ? "blue" : "black"} />
+                                </div>
                             </div>
                         </div>
 
@@ -95,20 +101,23 @@ function Panel() {
             </div>
 
             <div className='flex flex-col justify-center shadow-md rounded-lg'>
-                <div className='flex bg-[#FFFFFF] rounded-t-lg py-2.5 px-4'>Important</div>
                 {allTasks.map((task, index) => {
                     if (!task?.isImportant || task?.isCompleted) {
                         return;
                     }
                     return (
-                        <div key={index} className='flex bg-[#FAF9F8] rounded-b-lg border border-transparent border-t-[#d2cec9]'>
-                            <div className='px-1.5'>
-                                <Circle onClick={() => handleMarkComplete(index)} color={task?.isCompleted ? "blue" : "black"} background-color={task?.isCompleted ? "blue" : "black"} />
-                            </div>
-                            <div className='py-2.5 px-4 w-150'>{task?.title}</div>
-                            <div className='py-2.5 px-4 w-32'>{task?.date}</div>
-                            <div className='my-3 mx-9.5'>
-                                <Star onClick={() => handleMarkImportant(index)} size={16} color={task?.isImportant ? "yellow" : "black"} />
+                        <div>
+                            <div className='flex bg-[#FFFFFF] rounded-t-lg py-2.5 px-4'>Important</div>
+
+                            <div key={index} className='flex bg-[#FAF9F8] rounded-b-lg border border-transparent border-t-[#d2cec9]'>
+                                <div className='px-1.5 py-2.5'>
+                                    <Circle onClick={() => handleMarkComplete(index)} color={task?.isCompleted ? "blue" : "black"} background-color={task?.isCompleted ? "blue" : "black"} />
+                                </div>
+                                <div className='py-2.5 px-4 w-150'>{task?.title}</div>
+                                <div className='py-2.5 px-4 w-32'>{task?.date}</div>
+                                <div className='my-3 mx-9.5'>
+                                    <Star onClick={() => handleMarkImportant(index)} size={16} color={task?.isImportant ? "blue" : "black"} />
+                                </div>
                             </div>
                         </div>
 
