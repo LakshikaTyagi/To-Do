@@ -15,7 +15,9 @@ function Sidebar() {
 
     <div className='flex w-full'>
 
-      <div className='flex flex-col relative box-border h-screen p-0 w-73 top-0 left-0 shadow-md'>
+      <div className='my-0'>
+
+      <div className='flex flex-col relative box-border h-screen p-0 w-73 top-0 left-0 shadow-md '>
 
         <div className='mt-4 px-6 flex justify-start  items-center'>
           <div className='flex flex-col gap-1.5'>
@@ -85,6 +87,7 @@ function Sidebar() {
 
         </div>
 
+      </div>
       </div>
 
       <div className='ml-0 mr-0 grow'>

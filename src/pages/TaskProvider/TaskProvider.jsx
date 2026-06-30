@@ -9,6 +9,7 @@ function TaskProvider({ children }) {
         date: "",
         isImportant: false,
         isCompleted: false,
+        today : true
     });
 
     const [allTasks, setAllTasks] = useState([]);
@@ -17,6 +18,14 @@ function TaskProvider({ children }) {
         setTask({
             ...task,
             title: e.target.value
+        })
+    }
+
+    const handleTaskInputImportant = (e) => {
+        setTask({
+            ...task,
+            title : e.target.value,
+            isImportant : true
         })
     }
 
@@ -66,18 +75,19 @@ function TaskProvider({ children }) {
         })
     }
     return (
-        <TaskContext.Provider value={{
+        <TaskContext value={{
             task,
             setTask,
             allTasks,
             setAllTasks,
             handleAddTask,
+            handleTaskInputImportant,
             handleMarkComplete,
             handleMarkImportant,
             handleTaskInput
         }}>
             {children}
-        </TaskContext.Provider>
+        </TaskContext>
     )
 }
 

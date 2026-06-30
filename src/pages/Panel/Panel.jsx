@@ -13,6 +13,7 @@ function Panel() {
         allTasks,
         setAllTasks,
         handleAddTask,
+        handleTaskInputImportant,
         handleTaskInput,
         handleMarkComplete,
         handleMarkImportant
@@ -42,6 +43,12 @@ function Panel() {
             </div>
 
             <div className='flex flex-col justify-center shadow-md rounded-lg'>
+                <div className='flex bg-[#FFFFFF] rounded-t-lg'>
+                                <div className='py-2.5 px-4'> </div>
+                                <div className='py-2.5 px-4 w-150'>Title</div>
+                                <div className='py-2.5 px-4 w-28'>Due Date</div>
+                                <div className='py-2.5 px-4'>Important</div>
+                            </div>
 
                 {allTasks.map((task, index) => {
                     if (task?.isCompleted) {
@@ -49,12 +56,7 @@ function Panel() {
                     }
                     return (
                         <div>
-                            <div className='flex bg-[#FFFFFF] rounded-t-lg'>
-                                <div className='py-2.5 px-4'> </div>
-                                <div className='py-2.5 px-4 w-150'>Title</div>
-                                <div className='py-2.5 px-4 w-28'>Due Date</div>
-                                <div className='py-2.5 px-4'>Importance</div>
-                            </div>
+                            
                             <div key={index} className='flex items-center bg-[#FAF9F8] rounded-b-lg border border-transparent border-t-[#d2cec9]'>
                                 <div className='px-1.5' >
                                     <button onClick={() =>
@@ -76,13 +78,18 @@ function Panel() {
             </div>
 
             <div className='flex flex-col justify-center shadow-md rounded-lg'>
+                <div className='flex bg-[#FFFFFF] rounded-t-lg '>
+            <div className='py-2.5 px-1'>
+              <ChevronDown /> </div>
+            <div className='py-2.5 px-4'>Completed</div>
+          </div>
+
                 {allTasks.map((task, index) => {
                     if (!task?.isCompleted) {
                         return;
                     }
                     return (
                         <div>
-                            <div className='flex bg-[#FFFFFF] rounded-t-lg py-2.5 px-4'>Completed</div>
 
                             <div key={index} className='flex bg-[#FAF9F8] rounded-b-lg border border-transparent border-t-[#d2cec9]'>
                                 <div className='px-1.5 py-2.5'>
@@ -100,30 +107,7 @@ function Panel() {
                 })}
             </div>
 
-            <div className='flex flex-col justify-center shadow-md rounded-lg'>
-                {allTasks.map((task, index) => {
-                    if (!task?.isImportant || task?.isCompleted) {
-                        return;
-                    }
-                    return (
-                        <div>
-                            <div className='flex bg-[#FFFFFF] rounded-t-lg py-2.5 px-4'>Important</div>
-
-                            <div key={index} className='flex bg-[#FAF9F8] rounded-b-lg border border-transparent border-t-[#d2cec9]'>
-                                <div className='px-1.5 py-2.5'>
-                                    <Circle onClick={() => handleMarkComplete(index)} color={task?.isCompleted ? "blue" : "black"} background-color={task?.isCompleted ? "blue" : "black"} />
-                                </div>
-                                <div className='py-2.5 px-4 w-150'>{task?.title}</div>
-                                <div className='py-2.5 px-4 w-32'>{task?.date}</div>
-                                <div className='my-3 mx-9.5'>
-                                    <Star onClick={() => handleMarkImportant(index)} size={16} color={task?.isImportant ? "blue" : "black"} />
-                                </div>
-                            </div>
-                        </div>
-
-                    )
-                })}
-            </div>
+            
 
 
 
