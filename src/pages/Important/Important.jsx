@@ -55,9 +55,9 @@ function Important(props) {
             <input type="text" placeholder='Add a task' value={task?.title} onChange={handleTaskInputImportant} name="" id="" className='outline-none w-full py-4 px-3.5' />
           </div>
           <div className='rounded-b-lg px-4 bg-[#FAF9F8] flex py-2 border border-transparent border-t-[#d2cec9]'>
-            <input className='p-1 mx-1.5' type='date' value={task?.date} onChange={(e) => setTask({
+            <input className='p-1 mx-1.5' type='date' value={task?.dueDate} onChange={(e) => setTask({
               ...task,
-              date: e.target.value
+              dueDate: e.target.value
 
             })} />
             <button className='p-1 mx-1.5'>
@@ -89,7 +89,7 @@ function Important(props) {
                     <Circle onClick={() => handleMarkComplete(index)} color={task?.isCompleted ? "blue" : "black"} background-color={task?.isCompleted ? "blue" : "black"} />
                   </div>
                   <div className='py-2.5 px-4 w-150'>{task?.title}</div>
-                  <div className='py-2.5 px-4 w-32'>{task?.date}</div>
+                  <div className='py-2.5 px-4 w-32'>{task?.dueDate}</div>
                   <div className='my-3 mx-9.5'>
                     <Star onClick={() => handleMarkImportant(index)} size={16} color={task?.isImportant ? "blue" : "black"} />
                   </div>

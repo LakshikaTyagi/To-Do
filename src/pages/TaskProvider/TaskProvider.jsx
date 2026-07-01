@@ -3,13 +3,16 @@ import { useState } from 'react';
 import { TaskContext } from "../TaskContext/TaskContext";
 
 function TaskProvider({ children }) {
+
+    const todayDate = new Date();
+
     const [task, setTask] = useState({
         id: "",
         title: "",
-        date: "",
+        dueDate: "",
         isImportant: false,
         isCompleted: false,
-        today : true
+        today :  new Date().toLocaleDateString()
     });
 
     const [allTasks, setAllTasks] = useState([]);
@@ -38,13 +41,15 @@ function TaskProvider({ children }) {
         setTask({
             title: "",
             id: "",
-            date: "",
+            dueDate: "",
             isImportant: false,
-            isCompleted: false
+            isCompleted: false,
+            today :  todayDate.toLocaleDateString()
+
         })
 
         console.log(allTasks)
-        console.log(task)
+        // console.log(task)
     }
 
     const handleMarkImportant = (index) => {

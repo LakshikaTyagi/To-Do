@@ -6,6 +6,7 @@ import Important from '../../pages/Important/Important';
 import Planned from '../../pages/Planned/Planned';
 import Tasks from '../../pages/Tasks/Tasks';
 import Panel from '../../pages/Panel/Panel'
+import { CheckCheck } from 'lucide-react';
 
 function Sidebar() {
 
@@ -17,7 +18,7 @@ function Sidebar() {
 
       <div className='my-0'>
 
-      <div className='flex flex-col relative box-border h-screen p-0 w-73 top-0 left-0 shadow-md '>
+      <div className='flex flex-col relative overflow-auto box-border h-full p-0 w-73 top-0 left-0 shadow-md '>
 
         <div className='mt-4 px-6 flex justify-start  items-center'>
           <div className='flex flex-col gap-1.5'>
@@ -82,7 +83,7 @@ function Sidebar() {
             <svg class="fluentIcon ___12fm75w f1w7gpdv fez10in fg4l7m0" aria-label="" fill="currentColor" aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M4.83 10.48l5.65-5.65a3 3 0 014.25 4.24L8 15.8a1.5 1.5 0 01-2.12-2.12l6-6.01a.5.5 0 10-.7-.71l-6 6.01a2.5 2.5 0 003.53 3.54l6.71-6.72a4 4 0 10-5.65-5.66L4.12 9.78a.5.5 0 00.7.7z" fill="currentColor"></path></svg>
           </a>
           <Link to="myDay" onClick={() => setOption("MyDay")}>
-            todo
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.13" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-check" aria-hidden="true"><path d="M18 6 7 17l-5-5"></path><path d="m22 10-7.5 7.5L13 16"></path></svg>
           </Link>
 
         </div>

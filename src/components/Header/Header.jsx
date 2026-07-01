@@ -14,33 +14,16 @@ function Header() {
   return (
     <>
       <header className='sticky shadow z-70 w-full top-0 ' >
-        <nav className='bg-[#2564CF] outline-none' >
-          <div className='flex items-center justify-between h-12' >
+        <nav className='bg-[#2564CF] outline-none py-2' >
+          <div className='flex items-center justify-between ' >
 
             {/* to do and svg */}
             <div className='flex items-center gap-4 pl-4'>
-              <div className=' flex justify-center items-center  ' onClick={() => {
+              
+              <svg className='cursor-pointer' onClick={() => {
                 openIcon === "icon" ? setOpenIcon("none") : setOpenIcon("icon")
               }
-              }>
-                <div className='flex flex-col gap-1'>
-                  <div className='flex flex-row gap-1'>
-                    <div className='w-1 h-1 border-white bg-white rounded-full '></div>
-                    <div className='w-1 h-1 border-white bg-white rounded-full '></div>
-                    <div className='w-1 h-1 border-white bg-white rounded-full '></div>
-                  </div>
-                  <div className='flex flex-row gap-1'>
-                    <div className='w-1 h-1 border-white bg-white rounded-full '></div>
-                    <div className='w-1 h-1 border-white bg-white rounded-full '></div>
-                    <div className='w-1 h-1 border-white bg-white rounded-full '></div>
-                  </div>
-                  <div className='flex flex-row gap-1'>
-                    <div className='w-1 h-1 border-white bg-white rounded-full '></div>
-                    <div className='w-1 h-1 border-white bg-white rounded-full '></div>
-                    <div className='w-1 h-1 border-white bg-white rounded-full '></div>
-                  </div>
-                </div>
-              </div>
+              } xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-grid3x3-icon lucide-grid-3x3"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg>
               <Link to='/' className='flex items-center text-xl no-underline hover:underline w-fit font-medium text-gray-200 h-full text-sm/7'>To Do</Link>
             </div>
 
